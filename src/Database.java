@@ -9,6 +9,7 @@ public class Database {
 
     private final String SQL_ACCOUNTS_TABLE_CREATE = "CREATE TABLE IF NOT EXISTS accounts (ID INTEGER NOT NULL AUTO_INCREMENT, FirstName varchar(255), LastName varchar(255), Email varchar(255) NOT NULL, Password varchar(255) NOT NULL, PRIMARY KEY (ID), UNIQUE (Email))";
     private final String SQL_INSERT_ACCOUNT = "INSERT INTO accounts (FirstName, LastName, Email, Password) VALUES (?, ?, ?, ?)";
+    private final String SQL_DELETE_ACCOUNT = "DELETE FROM accounts WHERE Email = ?";
 
     public Database(){
         connect();
@@ -46,7 +47,13 @@ public class Database {
     }
 
     public void removeAccount(Account account){
-
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_DELETE_ACCOUNT);
+            preparedStatement.setString(1, account.getEmail());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     public void disconnect(){
