@@ -7,7 +7,7 @@ public class Account {
     private String email;
     private String password;
 
-    //constructor of the objects
+    //constructor of the object
     public Account(String firstName, String lastName, String email, String password) {
         setFirstName(firstName);
         setLastName(lastName);
