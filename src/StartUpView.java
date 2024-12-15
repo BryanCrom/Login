@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class View extends JPanel {
+public class StartUpView extends JPanel {
 
     private JLabel welcomeMsg;
 
@@ -8,7 +8,7 @@ public class View extends JPanel {
 
     private JButton signInBtn;
 
-    public View() {
+    public StartUpView() {
         setLayout(null);
 
         this.welcomeMsg = new JLabel("Welcome", SwingConstants.CENTER);
@@ -25,5 +25,29 @@ public class View extends JPanel {
         this.signInBtn.setLocation(240, 75);
         this.signInBtn.setSize(100, 25);
         this.add(this.signInBtn);
+    }
+
+    public JLabel getWelcomeMsg() {
+        return welcomeMsg;
+    }
+
+    public void setWelcomeMsg(JLabel welcomeMsg) {
+        this.welcomeMsg = welcomeMsg;
+    }
+
+    public JButton getSignUpBtn() {
+        return signUpBtn;
+    }
+
+    public void setSignUpBtn(JButton signUpBtn) {
+        this.signUpBtn = signUpBtn;
+    }
+
+    public JButton getSignInBtn() {
+        return signInBtn;
+    }
+
+    public void setSignInBtn(JButton signInBtn) {
+        this.signInBtn = signInBtn;
     }
 }
