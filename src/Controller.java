@@ -41,4 +41,8 @@ public class Controller extends JFrame {
         this.getContentPane().revalidate();
         this.getContentPane().repaint();
     }
+
+    public void changeWindowSize(int width, int height) {
+        this.setSize(width, height);
+    }
 }
