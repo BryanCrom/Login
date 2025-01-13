@@ -5,8 +5,9 @@ import java.awt.event.ActionListener;
 public class Controller extends JFrame {
 
     private Database database;
-    private StartUpView startUpView;
-    private DashboardView dashboardView;
+    private final StartUpView startUpView;
+    private final DashboardView dashboardView;
+    private final SignInView signInView;
 
     public Controller(String title) {
 
@@ -14,6 +15,7 @@ public class Controller extends JFrame {
         this.database = new Database();
         this.startUpView = new StartUpView();
         this.dashboardView = new DashboardView();
+        this.signInView = new SignInView();
 
         this.getContentPane().add(this.startUpView);
         this.setResizable(false);
@@ -23,7 +25,7 @@ public class Controller extends JFrame {
         this.startUpView.getSignInBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                swapViews(dashboardView);
+                swapViews(signInView);
             }
         });
 
@@ -31,6 +33,20 @@ public class Controller extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(startUpView);
+            }
+        });
+
+        this.signInView.getBackBtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                swapViews(startUpView);
+            }
+        });
+
+        this.signInView.getSubmitBtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                swapViews(dashboardView);
             }
         });
     }
