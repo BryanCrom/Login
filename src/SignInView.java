@@ -2,17 +2,24 @@ import javax.swing.*;
 
 public class SignInView extends JPanel{
 
+    private JLabel signInMsg;
+
     private JLabel emailSignInMsg;
     private JTextField emailSignInField;
 
     private JLabel passwordSignInMsg;
     private JTextField passwordSignInField;
 
-    private JButton backBtn;
-    private JButton submitBtn;
+    private JButton signInBackBtn;
+    private JButton signInSubmitBtn;
 
     public SignInView() {
         setLayout(null);
+
+        this.signInMsg = new JLabel("SIGN IN", SwingConstants.CENTER);
+        this.signInMsg.setVisible(true);
+        this.signInMsg.setBounds(100, 60, 200, 25);
+        this.add(signInMsg);
 
         this.emailSignInMsg = new JLabel("EMAIL:");
         this.emailSignInMsg.setVisible(true);
@@ -34,17 +41,25 @@ public class SignInView extends JPanel{
         this.passwordSignInField.setBounds(100, 85, 210, 25);
         this.add(passwordSignInField);
 
-        this.backBtn = new JButton("BACK");
-        this.backBtn.setVisible(true);
-        this.backBtn.setSize(100, 25);
-        this.backBtn.setLocation(100, 120);
-        this.add(backBtn);
+        this.signInBackBtn = new JButton("BACK");
+        this.signInBackBtn.setVisible(true);
+        this.signInBackBtn.setSize(100, 25);
+        this.signInBackBtn.setLocation(100, 120);
+        this.add(signInBackBtn);
 
-        this.submitBtn = new JButton("SUBMIT");
-        this.submitBtn.setVisible(true);
-        this.submitBtn.setSize(100, 25);
-        this.submitBtn.setLocation(210, 120);
-        this.add(submitBtn);
+        this.signInSubmitBtn = new JButton("SUBMIT");
+        this.signInSubmitBtn.setVisible(true);
+        this.signInSubmitBtn.setSize(100, 25);
+        this.signInSubmitBtn.setLocation(210, 120);
+        this.add(signInSubmitBtn);
+    }
+
+    public JLabel getSignInMsg() {
+        return signInMsg;
+    }
+
+    public void setSignInMsg(JLabel signInMsg) {
+        this.signInMsg = signInMsg;
     }
 
     public JLabel getEmailSignInMsg() {
@@ -79,19 +94,19 @@ public class SignInView extends JPanel{
         this.passwordSignInField = passwordSignInField;
     }
 
-    public JButton getSubmitBtn() {
-        return submitBtn;
+    public JButton getSignInBackBtn() {
+        return signInBackBtn;
     }
 
-    public void setSubmitBtn(JButton submitBtn) {
-        this.submitBtn = submitBtn;
+    public void setSignInBackBtn(JButton signInBackBtn) {
+        this.signInBackBtn = signInBackBtn;
     }
 
-    public JButton getBackBtn() {
-        return backBtn;
+    public JButton getSignInSubmitBtn() {
+        return signInSubmitBtn;
     }
 
-    public void setBackBtn(JButton backBtn) {
-        this.backBtn = backBtn;
+    public void setSignInSubmitBtn(JButton signInSubmitBtn) {
+        this.signInSubmitBtn = signInSubmitBtn;
     }
 }

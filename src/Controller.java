@@ -8,6 +8,7 @@ public class Controller extends JFrame {
     private final StartUpView startUpView;
     private final DashboardView dashboardView;
     private final SignInView signInView;
+    private final SignUpView signUpView;
 
     public Controller(String title) {
 
@@ -16,6 +17,7 @@ public class Controller extends JFrame {
         this.startUpView = new StartUpView();
         this.dashboardView = new DashboardView();
         this.signInView = new SignInView();
+        this.signUpView = new SignUpView();
 
         this.getContentPane().add(this.startUpView);
         this.setResizable(false);
@@ -29,6 +31,11 @@ public class Controller extends JFrame {
             }
         });
 
+        this.startUpView.getSignUpBtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) { swapViews(signUpView); }
+        });
+
         this.dashboardView.getLogOutBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -36,18 +43,28 @@ public class Controller extends JFrame {
             }
         });
 
-        this.signInView.getBackBtn().addActionListener(new ActionListener() {
+        this.signInView.getSignInBackBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(startUpView);
             }
         });
 
-        this.signInView.getSubmitBtn().addActionListener(new ActionListener() {
+        this.signInView.getSignInSubmitBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(dashboardView);
             }
+        });
+
+        this.signUpView.getSignUpBackBtn().addActionListener(new ActionListener() {
+           @Override
+           public void actionPerformed(ActionEvent e) { swapViews(startUpView); }
+        });
+
+        this.signUpView.getSignUpSubmitBtn().addActionListener(new ActionListener() {
+           @Override
+           public void actionPerformed(ActionEvent e) { swapViews(startUpView); }
         });
     }
 
