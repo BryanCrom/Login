@@ -13,17 +13,17 @@ public class DashboardView extends JPanel {
 
         this.dashboardMsg = new JLabel("DashBoard", SwingConstants.CENTER);
         this.dashboardMsg.setVisible(true);
-        this.dashboardMsg.setBounds(100, 25, 200, 30);
+        this.dashboardMsg.setBounds(150, 70, 200, 30);
         this.add(this.dashboardMsg);
 
         this.logOutBtn = new JButton("Log Out");
-        this.logOutBtn.setLocation(70, 75);
+        this.logOutBtn.setLocation(200, 370);
         this.logOutBtn.setSize(100, 25);
         this.add(this.logOutBtn);
 
         this.deleteBtn = new JButton("Delete Account");
-        this.deleteBtn.setLocation(240, 75);
-        this.deleteBtn.setSize(100, 25);
+        this.deleteBtn.setLocation(175, 400);
+        this.deleteBtn.setSize(150, 25);
         this.add(this.deleteBtn);
     }
 

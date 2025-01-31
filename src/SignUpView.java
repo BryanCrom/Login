@@ -24,52 +24,57 @@ public class SignUpView extends JPanel {
 
         this.signUpMsg = new JLabel("Sign Up", SwingConstants.CENTER);
         this.signUpMsg.setVisible(true);
-        this.signUpMsg.setBounds(10, 10, 300, 200);
+        this.signUpMsg.setBounds(100, 30, 200, 25);
         this.add(this.signUpMsg);
 
         this.firstNameMsg = new JLabel("First Name:");
         this.firstNameMsg.setVisible(true);
-        this.firstNameMsg.setBounds(10, 50, 300, 200);
+        this.firstNameMsg.setBounds(100, 60, 200, 25);
         this.add(this.firstNameMsg);
 
         this.firstNameField = new JTextField();
         this.firstNameField.setVisible(true);
-        this.firstNameField.setBounds(10, 80, 300, 200);
+        this.firstNameField.setBounds(100, 85, 210, 25);
         this.add(this.firstNameField);
 
         this.lastNameMsg = new JLabel("Last Name:");
         this.lastNameMsg.setVisible(true);
-        this.lastNameMsg.setBounds(10, 100, 300, 200);
+        this.lastNameMsg.setBounds(100, 110, 200, 25);
         this.add(this.lastNameMsg);
 
         this.lastNameField = new JTextField();
         this.lastNameField.setVisible(true);
-        this.lastNameField.setBounds(10, 140, 300, 200);
+        this.lastNameField.setBounds(100, 135, 210, 25);
         this.add(this.lastNameField);
 
         this.emailMsg = new JLabel("Email:");
         this.emailMsg.setVisible(true);
-        this.emailMsg.setBounds(10, 170, 300, 200);
+        this.emailMsg.setBounds(100, 160, 200, 25);
         this.add(this.emailMsg);
+
+        this.emailField = new JTextField();
+        this.emailField.setVisible(true);
+        this.emailField.setBounds(100, 185, 210, 25);
+        this.add(this.emailField);
 
         this.passwordMsg = new JLabel("Password:");
         this.passwordMsg.setVisible(true);
-        this.passwordMsg.setBounds(10, 200, 300, 200);
+        this.passwordMsg.setBounds(100, 210, 200, 25);
         this.add(this.passwordMsg);
 
         this.passwordField = new JPasswordField();
         this.passwordField.setVisible(true);
-        this.passwordField.setBounds(10, 240, 300, 200);
+        this.passwordField.setBounds(100, 235, 210, 25);
         this.add(this.passwordField);
 
         this.signUpBackBtn = new JButton("Back");
         this.signUpBackBtn.setVisible(true);
-        this.signUpBackBtn.setBounds(10, 270, 300, 200);
+        this.signUpBackBtn.setBounds(100, 270, 100, 25);
         this.add(this.signUpBackBtn);
 
         this.signUpSubmitBtn = new JButton("Submit");
         this.signUpSubmitBtn.setVisible(true);
-        this.signUpSubmitBtn.setBounds(10, 320, 300, 200);
+        this.signUpSubmitBtn.setBounds(210, 270, 100, 25);
         this.add(this.signUpSubmitBtn);
     }
 

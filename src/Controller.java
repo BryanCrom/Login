@@ -28,18 +28,23 @@ public class Controller extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(signInView);
+                changeWindowSize(410, 300);
             }
         });
 
         this.startUpView.getSignUpBtn().addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { swapViews(signUpView); }
+            public void actionPerformed(ActionEvent e) {
+                swapViews(signUpView);
+                changeWindowSize(410, 400);
+            }
         });
 
         this.dashboardView.getLogOutBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(startUpView);
+                changeWindowSize(410, 200);
             }
         });
 
@@ -47,6 +52,7 @@ public class Controller extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(startUpView);
+                changeWindowSize(410, 200);
             }
         });
 
@@ -54,17 +60,24 @@ public class Controller extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(dashboardView);
+                changeWindowSize(500, 500);
             }
         });
 
         this.signUpView.getSignUpBackBtn().addActionListener(new ActionListener() {
            @Override
-           public void actionPerformed(ActionEvent e) { swapViews(startUpView); }
+           public void actionPerformed(ActionEvent e) {
+               swapViews(startUpView);
+               changeWindowSize(410, 200);
+           }
         });
 
         this.signUpView.getSignUpSubmitBtn().addActionListener(new ActionListener() {
            @Override
-           public void actionPerformed(ActionEvent e) { swapViews(startUpView); }
+           public void actionPerformed(ActionEvent e) {
+               swapViews(startUpView);
+               changeWindowSize(410, 200);
+           }
         });
     }
 
