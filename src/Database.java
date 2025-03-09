@@ -14,7 +14,7 @@ public class Database {
     private final String SQL_INSERT_ACCOUNT = "INSERT INTO accounts (FirstName, LastName, Email, Password) VALUES (?, ?, ?, ?)";
     private final String SQL_DELETE_ACCOUNT = "DELETE FROM accounts WHERE Email = ?";
     private final String SQL_CHECK_ACCOUNT = "SELECT * FROM accounts WHERE Email = ?";
-    private final String SQL_FIND_ACCOUNT = "SELECT * FROM accounts WHERE FirstName = ? AND LastName = ? AND Email = ? AND Password = ?";
+    private final String SQL_FIND_ACCOUNT = "SELECT * FROM accounts WHERE Email = ? AND Password = ?";
 
     public Database(){
         connect();
@@ -24,6 +24,7 @@ public class Database {
     public void connect(){
         try{
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            createAccountsTable();
 
         } catch(SQLException e){
             System.err.println(e.getMessage());
@@ -89,13 +90,11 @@ public class Database {
         return false;
     }
 
-    public boolean accountExists(Account account){
+    public boolean accountExists(String email, String password){
         try{
             PreparedStatement preparedStatement = conn.prepareStatement(SQL_FIND_ACCOUNT);
-            preparedStatement.setString(1, account.getFirstName());
-            preparedStatement.setString(2, account.getLastName());
-            preparedStatement.setString(3, account.getEmail());
-            preparedStatement.setString(4, account.getPassword());
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 preparedStatement.close();

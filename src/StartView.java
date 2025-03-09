@@ -1,28 +1,28 @@
 import javax.swing.*;
 
-public class StartUpView extends JPanel {
+public class StartView extends JPanel {
 
     private JLabel welcomeMsg;
 
-    private JButton signUpBtn;
+    private JButton registerBtn;
 
     private JButton signInBtn;
 
-    public StartUpView() {
+    public StartView() {
         setLayout(null);
 
         this.welcomeMsg = new JLabel("Welcome", SwingConstants.CENTER);
         this.welcomeMsg.setVisible(true);
-        this.welcomeMsg.setBounds(100, 25, 200, 30);
+        this.welcomeMsg.setBounds(40, 25, 200, 30);
         this.add(this.welcomeMsg);
 
-        this.signUpBtn = new JButton("Sign Up");
-        this.signUpBtn.setLocation(70, 75);
-        this.signUpBtn.setSize(100, 25);
-        this.add(this.signUpBtn);
+        this.registerBtn = new JButton("Register");
+        this.registerBtn.setLocation(35, 75);
+        this.registerBtn.setSize(100, 25);
+        this.add(this.registerBtn);
 
         this.signInBtn = new JButton("Sign In");
-        this.signInBtn.setLocation(240, 75);
+        this.signInBtn.setLocation(155, 75);
         this.signInBtn.setSize(100, 25);
         this.add(this.signInBtn);
     }
@@ -35,12 +35,12 @@ public class StartUpView extends JPanel {
         this.welcomeMsg = welcomeMsg;
     }
 
-    public JButton getSignUpBtn() {
-        return signUpBtn;
+    public JButton getRegisterBtn() {
+        return registerBtn;
     }
 
-    public void setSignUpBtn(JButton signUpBtn) {
-        this.signUpBtn = signUpBtn;
+    public void setRegisterBtn(JButton signUpBtn) {
+        this.registerBtn = signUpBtn;
     }
 
     public JButton getSignInBtn() {
