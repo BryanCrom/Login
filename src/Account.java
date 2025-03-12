@@ -9,10 +9,10 @@ public class Account {
 
     //constructor of the object
     public Account(String firstName, String lastName, String email, String password) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        setEmail(email);
-        setPassword(password);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setEmail(email);
+        this.setPassword(password);
     }
 
     //getters and setters

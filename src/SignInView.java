@@ -1,64 +1,71 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class SignInView extends JPanel{
+import static java.awt.Font.BOLD;
 
-    private JLabel signInMsg;
+public class SignInView extends JPanel implements Images{
 
-    private JLabel emailSignInMsg;
-    private JTextField emailSignInField;
+    private final JLabel signInMsg;
 
-    private JLabel passwordSignInMsg;
-    private JPasswordField passwordSignInField;
-    private JLabel wrongSignInMsg;
+    private final JLabel emailSignInMsg;
+    private final JTextField emailSignInField;
 
-    private JButton signInBackBtn;
-    private JButton signInSubmitBtn;
+    private final JLabel passwordSignInMsg;
+
+    private final JPasswordField passwordSignInField;
+
+    private final JLabel wrongSignInMsg;
+
+    private final JButton signInBackBtn;
+    private final JButton signInSubmitBtn;
 
     public SignInView() {
-        setLayout(null);
+        this.setLayout(null);
 
-        this.signInMsg = new JLabel("SIGN IN", SwingConstants.CENTER);
-        this.signInMsg.setVisible(true);
-        this.signInMsg.setBounds(40, 30, 200, 25);
+        signInMsg = new JLabel("SIGN IN", SwingConstants.CENTER);
+        signInMsg.setFont(new Font("Dialog", BOLD, 14));
+        signInMsg.setVisible(true);
+        signInMsg.setBounds(40, 30, 200, 25);
         this.add(signInMsg);
 
-        this.emailSignInMsg = new JLabel("EMAIL:");
-        this.emailSignInMsg.setVisible(true);
-        this.emailSignInMsg.setBounds(40, 60, 200, 25);
+        emailSignInMsg = new JLabel("EMAIL:");
+        emailSignInMsg.setVisible(true);
+        emailSignInMsg.setBounds(40, 60, 200, 25);
         this.add(emailSignInMsg);
 
-        this.emailSignInField = new JTextField();
-        this.emailSignInField.setVisible(true);
-        this.emailSignInField.setBounds(40, 85, 210, 25);
+        emailSignInField = new JTextField();
+        emailSignInField.setVisible(true);
+        emailSignInField.setBounds(40, 85, 210, 25);
         this.add(emailSignInField);
 
-        this.passwordSignInMsg = new JLabel("PASSWORD:");
-        this.passwordSignInMsg.setVisible(true);
-        this.passwordSignInMsg.setBounds(40, 110, 200, 25);
+        passwordSignInMsg = new JLabel("PASSWORD:");
+        passwordSignInMsg.setVisible(true);
+        passwordSignInMsg.setBounds(40, 110, 200, 25);
         this.add(passwordSignInMsg);
 
-        this.passwordSignInField = new JPasswordField();
-        this.passwordSignInField.setVisible(true);
-        this.passwordSignInField.setBounds(40, 135, 210, 25);
+
+
+        passwordSignInField = new JPasswordField();
+        passwordSignInField.setVisible(true);
+        passwordSignInField.setBounds(40, 135, 210, 25);
         this.add(passwordSignInField);
 
-        this.wrongSignInMsg = new JLabel("Email or Password is Wrong");
-        this.wrongSignInMsg.setVisible(false);
-        this.wrongSignInMsg.setForeground(Color.RED);
-        this.wrongSignInMsg.setBounds(40, 160, 200, 25);
+        wrongSignInMsg = new JLabel("EMAIL OR PASSWORD IS INCORRECT");
+        wrongSignInMsg.setVisible(false);
+        wrongSignInMsg.setForeground(Color.RED);
+        wrongSignInMsg.setBounds(40, 160, 250, 25);
         this.add(wrongSignInMsg);
 
-        this.signInBackBtn = new JButton("BACK");
-        this.signInBackBtn.setVisible(true);
-        this.signInBackBtn.setSize(100, 25);
-        this.signInBackBtn.setLocation(40, 200);
+        signInBackBtn = new JButton("BACK");
+        signInBackBtn.setVisible(true);
+        signInBackBtn.setSize(100, 25);
+        signInBackBtn.setLocation(40, 200);
         this.add(signInBackBtn);
 
-        this.signInSubmitBtn = new JButton("SUBMIT");
-        this.signInSubmitBtn.setVisible(true);
-        this.signInSubmitBtn.setSize(100, 25);
-        this.signInSubmitBtn.setLocation(150, 200);
+        signInSubmitBtn = new JButton("SUBMIT");
+        signInSubmitBtn.setVisible(true);
+        signInSubmitBtn.setSize(100, 25);
+        signInSubmitBtn.setLocation(150, 200);
         this.add(signInSubmitBtn);
     }
 
@@ -66,63 +73,31 @@ public class SignInView extends JPanel{
         return signInMsg;
     }
 
-    public void setSignInMsg(JLabel signInMsg) {
-        this.signInMsg = signInMsg;
-    }
-
     public JLabel getEmailSignInMsg() {
         return emailSignInMsg;
-    }
-
-    public void setEmailSignInMsg(JLabel emailSignInMsg) {
-        this.emailSignInMsg = emailSignInMsg;
     }
 
     public JTextField getEmailSignInField() {
         return emailSignInField;
     }
 
-    public void setEmailSignInField(JTextField emailSignInField) {
-        this.emailSignInField = emailSignInField;
-    }
-
     public JLabel getPasswordSignInMsg() {
         return passwordSignInMsg;
-    }
-
-    public void setPasswordSignInMsg(JLabel passwordSignInMsg) {
-        this.passwordSignInMsg = passwordSignInMsg;
     }
 
     public JPasswordField getPasswordSignInField() {
         return passwordSignInField;
     }
 
-    public void setPasswordSignInField(JPasswordField passwordSignInField) {
-        this.passwordSignInField = passwordSignInField;
-    }
-
     public JLabel getWrongSignInMsg() {
         return wrongSignInMsg;
-    }
-
-    public void setWrongSignInMsg(JLabel wrongSignInMsg) {
-        this.wrongSignInMsg = wrongSignInMsg;
     }
 
     public JButton getSignInBackBtn() {
         return signInBackBtn;
     }
 
-    public void setSignInBackBtn(JButton signInBackBtn) {
-        this.signInBackBtn = signInBackBtn;
-    }
-
     public JButton getSignInSubmitBtn() {
         return signInSubmitBtn;
-    }
-
-    public void setSignInSubmitBtn(JButton signInSubmitBtn) {
-        this.signInSubmitBtn = signInSubmitBtn;
     }
 }

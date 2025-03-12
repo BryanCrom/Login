@@ -1,53 +1,45 @@
 import javax.swing.*;
+import java.awt.*;
+
+import static java.awt.Font.BOLD;
 
 public class DashboardView extends JPanel {
 
-    private JLabel dashboardMsg;
+    private final JLabel dashboardMsg;
 
-    private JButton logOutBtn;
+    private final JButton logOutBtn;
 
-    private JButton deleteBtn;
+    private final JButton deleteBtn;
 
     public DashboardView() {
-        setLayout(null);
+        this.setLayout(null);
 
-        this.dashboardMsg = new JLabel("DashBoard", SwingConstants.CENTER);
-        this.dashboardMsg.setVisible(true);
-        this.dashboardMsg.setBounds(150, 70, 200, 30);
-        this.add(this.dashboardMsg);
+        dashboardMsg = new JLabel("DashBoard", SwingConstants.CENTER);
+        dashboardMsg.setFont(new Font("Dialog", BOLD, 14));
+        dashboardMsg.setVisible(true);
+        dashboardMsg.setBounds(150, 70, 200, 30);
+        this.add(dashboardMsg);
 
-        this.logOutBtn = new JButton("Log Out");
-        this.logOutBtn.setLocation(200, 370);
-        this.logOutBtn.setSize(100, 25);
-        this.add(this.logOutBtn);
+        logOutBtn = new JButton("Log Out");
+        logOutBtn.setLocation(200, 370);
+        logOutBtn.setSize(100, 25);
+        this.add(logOutBtn);
 
-        this.deleteBtn = new JButton("Delete Account");
-        this.deleteBtn.setLocation(175, 400);
-        this.deleteBtn.setSize(150, 25);
-        this.add(this.deleteBtn);
+        deleteBtn = new JButton("Delete Account");
+        deleteBtn.setLocation(175, 400);
+        deleteBtn.setSize(150, 25);
+        this.add(deleteBtn);
     }
 
     public JLabel getDashboardMsg() {
         return dashboardMsg;
     }
 
-    public void setDashboardMsg(JLabel dashboardMsg) {
-        this.dashboardMsg = dashboardMsg;
-    }
-
     public JButton getLogOutBtn() {
         return logOutBtn;
     }
 
-    public void setLogOutBtn(JButton logOutBtn) {
-        this.logOutBtn = logOutBtn;
-    }
-
     public JButton getDeleteBtn() {
         return deleteBtn;
-    }
-
-    public void setDeleteBtn(JButton deleteBtn) {
-        this.deleteBtn = deleteBtn;
     }
 }

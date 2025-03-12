@@ -1,8 +1,5 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.util.Arrays;
 
 public class Controller extends JFrame {
@@ -17,17 +14,18 @@ public class Controller extends JFrame {
     public Controller() {
 
         super("Login");
-        this.database = new Database();
-        this.startView = new StartView();
-        this.dashboardView = new DashboardView();
-        this.signInView = new SignInView();
-        this.registerView = new RegisterView();
-        this.validation = new Validation();
+        database = new Database();
+        startView = new StartView();
+        dashboardView = new DashboardView();
+        signInView = new SignInView();
+        registerView = new RegisterView();
+        validation = new Validation();
 
         this.getContentPane().add(this.startView);
         this.setResizable(false);
         this.setSize(300, 170);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
 
         this.addWindowListener(new WindowAdapter() {
@@ -38,7 +36,7 @@ public class Controller extends JFrame {
             }
         });
 
-        this.startView.getSignInBtn().addActionListener(new ActionListener() {
+        startView.getSignInBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(signInView);
@@ -46,15 +44,15 @@ public class Controller extends JFrame {
             }
         });
 
-        this.startView.getRegisterBtn().addActionListener(new ActionListener() {
+        startView.getRegisterBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(registerView);
-                changeWindowSize(400, 355);
+                changeWindowSize(400, 380);
             }
         });
 
-        this.dashboardView.getLogOutBtn().addActionListener(new ActionListener() {
+        dashboardView.getLogOutBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(startView);
@@ -62,7 +60,7 @@ public class Controller extends JFrame {
             }
         });
 
-        this.dashboardView.getDeleteBtn().addActionListener(new ActionListener() {
+        dashboardView.getDeleteBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(startView);
@@ -70,24 +68,22 @@ public class Controller extends JFrame {
             }
         });
 
-        this.signInView.getSignInBackBtn().addActionListener(new ActionListener() {
+        signInView.getSignInBackBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 swapViews(startView);
                 changeWindowSize(300, 170);
 
                 signInView.getWrongSignInMsg().setVisible(false);
-
                 signInView.getEmailSignInField().setText("");
                 signInView.getPasswordSignInField().setText("");
             }
         });
 
-        this.signInView.getSignInSubmitBtn().addActionListener(new ActionListener() {
+        signInView.getSignInSubmitBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                if(!database.accountExists(signInView.getEmailSignInField().getText(), new String(registerView.getPasswordRegisterField().getPassword()))) {
+                if(!database.accountExists(signInView.getEmailSignInField().getText(), new String(signInView.getPasswordSignInField().getPassword()))) {
                     signInView.getWrongSignInMsg().setVisible(true);
                 }
                 else {
@@ -100,7 +96,19 @@ public class Controller extends JFrame {
             }
         });
 
-        this.registerView.getRegisterBackBtn().addActionListener(new ActionListener() {
+        registerView.getShowRegisterPassword().addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if(registerView.getShowRegisterPassword().isSelected()){
+                    registerView.getShowRegisterPassword().setIcon(new ImageIcon(registerView.getShow()));
+                }
+                else{
+                    registerView.getShowRegisterPassword().setIcon(new ImageIcon(registerView.getHide()));
+                }
+            }
+        });
+
+        registerView.getRegisterBackBtn().addActionListener(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
                swapViews(startView);
@@ -119,7 +127,7 @@ public class Controller extends JFrame {
            }
         });
 
-        this.registerView.getRegisterSubmitBtn().addActionListener(new ActionListener() {
+        registerView.getRegisterSubmitBtn().addActionListener(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
                String firstName = registerView.getFirstNameField().getText();

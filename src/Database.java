@@ -14,7 +14,7 @@ public class Database {
     private final String SQL_INSERT_ACCOUNT = "INSERT INTO accounts (FirstName, LastName, Email, Password) VALUES (?, ?, ?, ?)";
     private final String SQL_DELETE_ACCOUNT = "DELETE FROM accounts WHERE Email = ?";
     private final String SQL_CHECK_ACCOUNT = "SELECT * FROM accounts WHERE Email = ?";
-    private final String SQL_FIND_ACCOUNT = "SELECT * FROM accounts WHERE Email = ? AND Password = ?";
+    private final String SQL_FIND_ACCOUNT = "SELECT * FROM accounts WHERE Email = ? AND BINARY Password = ?";
 
     public Database(){
         connect();

@@ -1,53 +1,45 @@
 import javax.swing.*;
+import java.awt.*;
+
+import static java.awt.Font.BOLD;
 
 public class StartView extends JPanel {
 
-    private JLabel welcomeMsg;
+    private final JLabel welcomeMsg;
 
-    private JButton registerBtn;
+    private final JButton registerBtn;
 
-    private JButton signInBtn;
+    private final JButton signInBtn;
 
     public StartView() {
-        setLayout(null);
+        this.setLayout(null);
 
-        this.welcomeMsg = new JLabel("Welcome", SwingConstants.CENTER);
-        this.welcomeMsg.setVisible(true);
-        this.welcomeMsg.setBounds(40, 25, 200, 30);
-        this.add(this.welcomeMsg);
+        welcomeMsg = new JLabel("Welcome", SwingConstants.CENTER);
+        welcomeMsg.setFont(new Font("Dialog", BOLD, 14));
+        welcomeMsg.setVisible(true);
+        welcomeMsg.setBounds(40, 25, 200, 30);
+        this.add(welcomeMsg);
 
-        this.registerBtn = new JButton("Register");
-        this.registerBtn.setLocation(35, 75);
-        this.registerBtn.setSize(100, 25);
-        this.add(this.registerBtn);
+        registerBtn = new JButton("Register");
+        registerBtn.setLocation(35, 75);
+        registerBtn.setSize(100, 25);
+        this.add(registerBtn);
 
-        this.signInBtn = new JButton("Sign In");
-        this.signInBtn.setLocation(155, 75);
-        this.signInBtn.setSize(100, 25);
-        this.add(this.signInBtn);
+        signInBtn = new JButton("Sign In");
+        signInBtn.setLocation(155, 75);
+        signInBtn.setSize(100, 25);
+        this.add(signInBtn);
     }
 
     public JLabel getWelcomeMsg() {
         return welcomeMsg;
     }
 
-    public void setWelcomeMsg(JLabel welcomeMsg) {
-        this.welcomeMsg = welcomeMsg;
-    }
-
     public JButton getRegisterBtn() {
         return registerBtn;
     }
 
-    public void setRegisterBtn(JButton signUpBtn) {
-        this.registerBtn = signUpBtn;
-    }
-
     public JButton getSignInBtn() {
         return signInBtn;
-    }
-
-    public void setSignInBtn(JButton signInBtn) {
-        this.signInBtn = signInBtn;
     }
 }
