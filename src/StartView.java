@@ -5,7 +5,7 @@ import static java.awt.Font.BOLD;
 
 public class StartView extends JPanel {
 
-    private final JLabel welcomeMsg;
+    private final JLabel welcomeLabel;
 
     private final JButton registerBtn;
 
@@ -14,11 +14,11 @@ public class StartView extends JPanel {
     public StartView() {
         this.setLayout(null);
 
-        welcomeMsg = new JLabel("Welcome", SwingConstants.CENTER);
-        welcomeMsg.setFont(new Font("Dialog", BOLD, 14));
-        welcomeMsg.setVisible(true);
-        welcomeMsg.setBounds(40, 25, 200, 30);
-        this.add(welcomeMsg);
+        welcomeLabel = new JLabel("Welcome", SwingConstants.CENTER);
+        welcomeLabel.setFont(new Font("Dialog", BOLD, 14));
+        welcomeLabel.setVisible(true);
+        welcomeLabel.setBounds(40, 25, 200, 30);
+        this.add(welcomeLabel);
 
         registerBtn = new JButton("Register");
         registerBtn.setLocation(35, 75);
@@ -31,8 +31,8 @@ public class StartView extends JPanel {
         this.add(signInBtn);
     }
 
-    public JLabel getWelcomeMsg() {
-        return welcomeMsg;
+    public JLabel getWelcomeLabel() {
+        return welcomeLabel;
     }
 
     public JButton getRegisterBtn() {

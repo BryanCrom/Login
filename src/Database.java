@@ -90,6 +90,7 @@ public class Database {
         return false;
     }
 
+    //check if the account exists in the database
     public boolean accountExists(String email, String password){
         try{
             PreparedStatement preparedStatement = conn.prepareStatement(SQL_FIND_ACCOUNT);
@@ -106,6 +107,26 @@ public class Database {
             System.err.println(e.getMessage());
         }
         return false;
+    }
+
+    //get the full name of the account
+    public Account getAccount(String email, String password){
+        Account account = null;
+
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_FIND_ACCOUNT);
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()){
+                account = new Account(resultSet.getString("FirstName"), resultSet.getString("LastName"), resultSet.getString("Email"), resultSet.getString("Password"));
+            }
+            preparedStatement.close();
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+
+        return account;
     }
 
     //close connection from database

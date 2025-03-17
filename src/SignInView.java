@@ -5,99 +5,108 @@ import static java.awt.Font.BOLD;
 
 public class SignInView extends JPanel implements Images{
 
-    private final JLabel signInMsg;
+    private final JLabel signInLabel;
 
-    private final JLabel emailSignInMsg;
-    private final JTextField emailSignInField;
+    private final JLabel emailLabel;
+    private final JTextField emailField;
 
-    private final JLabel passwordSignInMsg;
+    private final JLabel passwordLabel;
+    private final JPasswordField passwordField;
 
-    private final JPasswordField passwordSignInField;
+    private final JCheckBox showPasswordCheckBox;
 
-    private final JLabel wrongSignInMsg;
+    private final JLabel wrongLoginLabel;
 
-    private final JButton signInBackBtn;
-    private final JButton signInSubmitBtn;
+    private final JButton backBtn;
+    private final JButton submitBtn;
 
     public SignInView() {
         this.setLayout(null);
 
-        signInMsg = new JLabel("SIGN IN", SwingConstants.CENTER);
-        signInMsg.setFont(new Font("Dialog", BOLD, 14));
-        signInMsg.setVisible(true);
-        signInMsg.setBounds(40, 30, 200, 25);
-        this.add(signInMsg);
+        signInLabel = new JLabel("SIGN IN", SwingConstants.CENTER);
+        signInLabel.setFont(new Font("Dialog", BOLD, 14));
+        signInLabel.setVisible(true);
+        signInLabel.setBounds(40, 30, 200, 25);
+        this.add(signInLabel);
 
-        emailSignInMsg = new JLabel("EMAIL:");
-        emailSignInMsg.setVisible(true);
-        emailSignInMsg.setBounds(40, 60, 200, 25);
-        this.add(emailSignInMsg);
+        emailLabel = new JLabel("EMAIL:");
+        emailLabel.setVisible(true);
+        emailLabel.setBounds(40, 60, 200, 25);
+        this.add(emailLabel);
 
-        emailSignInField = new JTextField();
-        emailSignInField.setVisible(true);
-        emailSignInField.setBounds(40, 85, 210, 25);
-        this.add(emailSignInField);
+        emailField = new JTextField();
+        emailField.setVisible(true);
+        emailField.setBounds(40, 85, 210, 25);
+        this.add(emailField);
 
-        passwordSignInMsg = new JLabel("PASSWORD:");
-        passwordSignInMsg.setVisible(true);
-        passwordSignInMsg.setBounds(40, 110, 200, 25);
-        this.add(passwordSignInMsg);
+        passwordLabel = new JLabel("PASSWORD:");
+        passwordLabel.setVisible(true);
+        passwordLabel.setBounds(40, 110, 200, 25);
+        this.add(passwordLabel);
 
+        showPasswordCheckBox = new JCheckBox(new ImageIcon(hide));
+        showPasswordCheckBox.setVisible(true);
+        showPasswordCheckBox.setToolTipText("click me");
+        showPasswordCheckBox.setBounds(112, 113, 22, 20);
+        this.add(showPasswordCheckBox);
 
+        passwordField = new JPasswordField();
+        passwordField.setVisible(true);
+        passwordField.setBounds(40, 135, 210, 25);
+        this.add(passwordField);
 
-        passwordSignInField = new JPasswordField();
-        passwordSignInField.setVisible(true);
-        passwordSignInField.setBounds(40, 135, 210, 25);
-        this.add(passwordSignInField);
+        wrongLoginLabel = new JLabel("EMAIL OR PASSWORD IS INCORRECT");
+        wrongLoginLabel.setVisible(false);
+        wrongLoginLabel.setForeground(Color.RED);
+        wrongLoginLabel.setBounds(40, 160, 250, 25);
+        this.add(wrongLoginLabel);
 
-        wrongSignInMsg = new JLabel("EMAIL OR PASSWORD IS INCORRECT");
-        wrongSignInMsg.setVisible(false);
-        wrongSignInMsg.setForeground(Color.RED);
-        wrongSignInMsg.setBounds(40, 160, 250, 25);
-        this.add(wrongSignInMsg);
+        backBtn = new JButton("BACK");
+        backBtn.setVisible(true);
+        backBtn.setSize(100, 25);
+        backBtn.setLocation(40, 200);
+        this.add(backBtn);
 
-        signInBackBtn = new JButton("BACK");
-        signInBackBtn.setVisible(true);
-        signInBackBtn.setSize(100, 25);
-        signInBackBtn.setLocation(40, 200);
-        this.add(signInBackBtn);
-
-        signInSubmitBtn = new JButton("SUBMIT");
-        signInSubmitBtn.setVisible(true);
-        signInSubmitBtn.setSize(100, 25);
-        signInSubmitBtn.setLocation(150, 200);
-        this.add(signInSubmitBtn);
+        submitBtn = new JButton("SUBMIT");
+        submitBtn.setVisible(true);
+        submitBtn.setSize(100, 25);
+        submitBtn.setLocation(150, 200);
+        this.add(submitBtn);
     }
 
-    public JLabel getSignInMsg() {
-        return signInMsg;
+    public JLabel getSignInLabel() {
+        return signInLabel;
     }
 
-    public JLabel getEmailSignInMsg() {
-        return emailSignInMsg;
+    public JLabel getEmailLabel() {
+        return emailLabel;
     }
 
-    public JTextField getEmailSignInField() {
-        return emailSignInField;
+    public JTextField getEmailField() {
+        return emailField;
     }
 
-    public JLabel getPasswordSignInMsg() {
-        return passwordSignInMsg;
+    public JLabel getPasswordLabel() {
+        return passwordLabel;
     }
 
-    public JPasswordField getPasswordSignInField() {
-        return passwordSignInField;
+    public JPasswordField getPasswordField() {
+        return passwordField;
     }
 
-    public JLabel getWrongSignInMsg() {
-        return wrongSignInMsg;
+    public JCheckBox getShowPasswordCheckBox() {
+        return showPasswordCheckBox;
     }
 
-    public JButton getSignInBackBtn() {
-        return signInBackBtn;
+    public JLabel getWrongLoginLabel() {
+        return wrongLoginLabel;
     }
 
-    public JButton getSignInSubmitBtn() {
-        return signInSubmitBtn;
+    public JButton getBackBtn() {
+        return backBtn;
+    }
+
+    public JButton getSubmitBtn() {
+        return submitBtn;
     }
 }
