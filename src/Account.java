@@ -1,4 +1,6 @@
-//Account class to create Account objects for login information
+//Purpose: Account class to create Account objects for login information
+//Author: Bryan Crombach
+
 public class Account {
 
     //variables that the database needs to know for a new account

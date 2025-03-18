@@ -1,8 +1,12 @@
+//Purpose: controls all functionality of the GUI
+//Author: Bryan Crombach
+
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Controller extends JFrame implements Images{
 
+    //class variables
     private final Database database;
     private final StartView startView;
     private final DashboardView dashboardView;
@@ -10,8 +14,10 @@ public class Controller extends JFrame implements Images{
     private final RegistrationView registrationView;
     private final Validation validation;
 
+    //account that is currently signed in
     Account currentAccount;
 
+    //hidden character variable
     char hiddenChar;
 
     //registration labels
@@ -40,6 +46,7 @@ public class Controller extends JFrame implements Images{
 
     public Controller() {
 
+        //initialise class objects
         super("Login");
         database = new Database();
         startView = new StartView();

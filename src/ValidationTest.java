@@ -1,3 +1,6 @@
+//Purpose: test if the regex validations work as intended
+//Author: Bryan Crombach
+
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -6,11 +9,13 @@ class ValidationTest {
 
     private Validation v;
 
+    //creates validation object
     @BeforeEach
     public void setUp() {
         this.v = new Validation();
     }
 
+    //tests names
     @org.junit.jupiter.api.Test
     void validateName() {
         //should be true
@@ -28,6 +33,7 @@ class ValidationTest {
         assertFalse(v.validateName("Bryan "));
     }
 
+    //tests emails
     @org.junit.jupiter.api.Test
     void validateEmail() {
         //should be true
@@ -47,6 +53,7 @@ class ValidationTest {
         assertFalse(v.validateEmail("Bryan@ gmail.com"));
     }
 
+    //tests passwords
     @org.junit.jupiter.api.Test
     void validatePassword() {
         //should be true

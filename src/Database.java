@@ -1,6 +1,8 @@
+//Purpose: class that runs the database for login functionality
+//Author: Bryan Crombach
+
 import java.sql.*;
 
-//class that runs the database for login functionality
 public class Database {
 
     //variables for connecting to the database
