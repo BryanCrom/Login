@@ -3,13 +3,10 @@
 
 import java.sql.*;
 
-public class Database {
+public class Database implements Credentials{
 
     //variables for connecting to the database
     private Connection conn;
-    private final String URL = "jdbc:mysql://localhost:3306/jdbc-login";
-    private final String USER = "root";
-    private final String PASSWORD = "P914D@5yIu?/";
 
     //SQL queries to be used in statements
     private final String SQL_ACCOUNTS_TABLE_CREATE = "CREATE TABLE IF NOT EXISTS accounts (ID INTEGER NOT NULL AUTO_INCREMENT, FirstName varchar(255), LastName varchar(255), Email varchar(255) NOT NULL, Password varchar(255) NOT NULL, PRIMARY KEY (ID), UNIQUE (Email))";
